@@ -1,0 +1,8 @@
+// An Example
+
+function sayMyName(name = "Beyonce", age = 34) {
+  return "Hi, " + name;
+}
+
+const sayingMyName = sayMyName("Sloane", 23); // > "Hi, Sloane"
+const sayingTheQueensName = sayMyName(); // > "Hi, Beyonce"

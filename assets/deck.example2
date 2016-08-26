@@ -1,0 +1,15 @@
+const yelling = ['HEY', 'HOW ARE YOU??', 'WHATCHA DOIN??'];
+
+// We used to do it this way
+const whyAreYouShouting = yelling.map(function (shout) {
+  return shout;
+});
+
+// Now we can do it this way
+
+const whyAreYouShouting = yelling.map((shout) => shout);
+
+
+// Or even
+
+const cantHearYou = yelling.map(() => "La la la la...");

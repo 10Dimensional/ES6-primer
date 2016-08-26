@@ -1,0 +1,29 @@
+// Const - Things you don't want to change
+
+const key = 'abc123';
+
+const person = {
+  name: 'Foxy Lady',
+  gender: 'Female'
+}
+
+const grabbingSomeDOMNodes = document.querySelectorAll(li);
+
+// Let - Things you want to change, but don't want spillin' e'erwhere
+
+function coolFunction() {
+  let coolLet = "So cool!";
+}
+
+const arr = [1, 2, 3];
+for(let i = 0; i < arr.length; i++) {
+  console.log("Listen! Hey!");
+}
+
+let dog = "Good boy";
+let dog = "Bad boy"; // Won't work, since dog has already been declared, yay for safety!
+
+
+// And I guess if you want to use var???
+
+var globalThingYouDontCareAbout = "something";
