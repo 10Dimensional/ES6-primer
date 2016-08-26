@@ -1,4 +1,4 @@
-# Spectacle Boilerplate
+# ES6 Primer
 
 ## Reference
 

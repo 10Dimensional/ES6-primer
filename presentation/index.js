@@ -634,9 +634,17 @@ buttons.forEach(button => {
             <List>
               <ListItem><Link href="https://es6.io" textColor="white">ES6.io</Link>  -- Wes Bos</ListItem>
               <ListItem><Link href="https://formidable.com/open-source/spectacle/"><Text textColor="white">https://formidable.com/open-source/spectacle/</Text></Link></ListItem>
-              <ListItem><Link href="https://github.com/getify/You-Dont-Know-JS" textColor="white">You Don't Know JS</Link></ListItem>
+              <ListItem><Link href="https://github.com/getify/You-Dont-Know-JS" textColor="white">You Dont Know JS</Link></ListItem>
             </List>
           </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="secondary">
+              Wait, do I have to download this presentation from GitHub just to see it??? That's some BS.
+            </Heading>
+            <Text>Nope, I'm emailing a PDF of it to everyone.</Text>
+          </Slide>
+
         </Deck>
       </Spectacle>
     );
