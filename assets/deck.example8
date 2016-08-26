@@ -1,0 +1,14 @@
+// Iterate over objects!
+
+const myParentsCat = {
+  name: "Cat Stevens",
+  color: "Black",
+  breed: "Bombay"
+}
+
+for(let prop of Object.keys(myParentsCat)) {
+  const value = myParentsCat[prop];
+  console.log(value);
+}
+
+// For now though, it's best to just continue using a for..in loop until .entries and .values is added to the Object prototype.

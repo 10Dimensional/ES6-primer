@@ -1,0 +1,10 @@
+// Fethcing data from a blog
+const postsPromise = fetch('https://someblogname.com/posts');
+
+// When that data DOES come back
+postsPromise
+    .then((data) => data.json)
+    .then(data => { console.log(data) })
+    .catch((err) => {
+        console.error(err);
+});

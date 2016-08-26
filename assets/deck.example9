@@ -1,0 +1,15 @@
+// Lets say you have a bunch of data from an API...
+// Array.find is a cool way of filtering through the noise to find specific values.
+
+const id = "1234567";
+const post = posts.find(post => post.id === id);
+const postIndex = posts.findIndex(post => post.id === id);
+
+// Array.from() is great for taking received data, like an Object or Node List into an Array
+const ps = document.querySelectorAll('p');
+const pArray = Array.from(ps); // Easy!
+
+// Array.some and Array.every return true/false depending on the criteria you pass in.
+const ages = [32, 15, 19, 12];
+const isThereAnAdult = ages.some(age => age >= 18); // > True
+const isEveryoneAnAdult = ages.every(age => age >= 18); // > False

@@ -1,0 +1,23 @@
+// We destructure arrays in the same way we destructure objects
+
+const myCat = ["Pablo Wilberforce The Cat, "Idk", "pablonotpicasso.com"];
+const [ name, breed, website ] = myCat;
+
+// Also here's a cool example:
+
+// You know that annoying thing when you have to swap variable values?
+// Destructuring actually makes that super easy, before we would;
+
+const value1 = 1;
+const value2 = 2;
+let temp = 0;
+
+temp = value1;
+value1 = value2
+value2 = temp;
+
+// Ew!
+
+// This is better:
+
+[ value1, value2 ] = [ value2, value1 ]; // Creating an array and destructuring it, so swap the two variables

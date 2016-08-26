@@ -1,0 +1,23 @@
+// A brief, and common example
+
+class Animal {
+      constructor(name) {
+          this.name = name;
+          this.thirst = 100;
+          this.belly = [];
+      }
+
+}
+
+class Dog extends Animal {
+      constructor(name, breed) {
+          super(name);
+              this.breed = breed;
+      }
+
+      bark() {
+          console.log('A dog barks');
+      }
+}
+
+const dog1 = new Dog("Fido");

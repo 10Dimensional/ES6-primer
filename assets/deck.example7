@@ -1,0 +1,28 @@
+// It won't do your laundry for you...but it will:
+
+// Grab the index of a value in an array
+const names = ["Sloane", "Ryan", "Troy", "Drew"];
+for(let [i, name] of cuts.entries()) {
+  console.log(`Name ${i} is ${name}`);
+}
+
+// Iterate over the arguments of an function
+function someFunction() {
+  for(let num of arguments) {
+    // Stuff happens
+  }
+}
+
+// Iterate over a string
+const address = "4445 N 36th St";
+for (let char of address) {
+  console.log(char);
+}
+
+// Iterate over DOM nodes
+const lis = documentquerySelectorAll('li');
+for(const li in lis) {
+  li.addEventListener('click', (e) => console.log('You clicked me!'));
+}
+
+// And more!

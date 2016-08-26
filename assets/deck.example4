@@ -1,5 +1,21 @@
-// HTML fragments
+// HTML fragments -- A nice way of generating markup
 
 const videoGames = {
-
+  { name: "Hearthstone", score: 8 },
+  { name: "No Man's Sky", score: 7 },
+  { name: "Tokyo Mirage Sessions FE", score: 7 }
 }
+
+const faveGames = `
+  <ul>
+    ${videoGames.map((game) => `<li>I gave ${game.name} a score of ${game.score}</li>`).join('')}
+  </ul>
+`;
+
+// Sanitizing data -- Sorry for the pseudo code!
+
+function santize(string) {
+  // Santizing code goes here :)
+}
+
+const hacked = santize`Oops looks like there's a weird <script>alert("You just got hacked!");</script> tag in here...`

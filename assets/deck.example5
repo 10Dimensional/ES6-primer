@@ -1,0 +1,22 @@
+const myCat = {
+  first: 'Pablo',
+  middle: 'Wilberforce',
+  last: 'The Cat',
+  temperament: 'Does not care about u',
+  city: 'Phoenix',
+  twitter: "@lilhomewrecker", // But no really, he is destroying my furniture,
+  habits: {
+    1: "Sleeping",
+    2: "Being a brat",
+    3: "Meowing"
+  }
+}
+
+// We could grab is first and name like this:
+
+const first = mycat.first;
+const last = myCat.last;
+
+// But with destructuring, no longer!
+
+const { first, last, twitter } = myCat; // Creating several variables, from the myCat object.

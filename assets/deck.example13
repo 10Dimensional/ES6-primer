@@ -1,0 +1,20 @@
+const fridayLunchLine = new Set();
+
+fridayLunchLine.add("Sloane");
+fridayLunchLine.add("Ryan");
+fridayLunchLine.add("Michael");
+fridayLunchLine.add("Chris");
+fridayLunchLine.add("Leah");
+fridayLunchLine.add("Spencer");
+fridayLunchLine.add("Troy");
+
+const line = fridayLunchLine.values();
+
+//Starts up a SetIterator, which...iterates through every value.
+console.log(line.next().value);
+console.log(line.next().value);
+console.log(line.next().value);
+
+// After a value in the iterator has been called, it's removed -- but not from the set itself.
+
+line.keys(); // > Sloane, ryan, etc -- Sets don't have keys, just values.

@@ -1,0 +1,20 @@
+const people = new Map();
+
+people.set("Sloane", 23);
+people.set("Nick Robinson", 25);
+people.set("Griffin McElroy", 29);
+
+people.has('Sloane') // > True
+
+people.get('Griffin') // > 29
+
+// Can loop over them in two ways
+
+people.forEach(val, key) => console.log(val, key);
+
+// OR
+
+// We can use a for of loop, and a little destructuring
+for (const [ key, val ] of people) {
+  console.log(key + val);
+}
