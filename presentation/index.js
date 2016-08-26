@@ -49,13 +49,29 @@ preloader(images);
 const theme = createTheme({
   primary: "#ff4081",
   secondary: '#fff',
-  font: 'Arial'
+  font: 'Arial',
 });
+
+const codeStyle = {
+  fontSize: '32px',
+  color: 'black'
+}
 
 const buttonStyles = {
   background: 'blue',
   display: 'inline-block',
-  padding: '10px 30px'
+  padding: '10px 30px',
+  marginTop: '30px',
+  color: 'white'
+}
+
+const headingSize = {
+  fontSize: '220px',
+  marginBottom: '20px'
+}
+
+const smaller = {
+  fontSize: '15px'
 }
 
 export default class Presentation extends React.Component {
@@ -63,48 +79,53 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps lineHeight={1} textColor="black">
+            <Heading caps textColor="white" style={headingSize}>
               ES6
             </Heading>
             <Heading size={1} fit caps>
               A quick, conceptual primer
             </Heading>
             <Text bold caps textColor="tertiary">Also on Github, for your viewing pleasure</Text>
-            <Link href="https://github.com/FormidableLabs/spectacle">
+            <Link href="https://github.com/10Dimensional/ES6-primer">
               <Text bold caps style={buttonStyles}>Sweet, take me there</Text>
             </Link>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+
+          <Slide transition={["slide"]} bgColor="primary" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={2} caps textColor="">Let vs var vs const</Heading>
-            <Heading size={4} caps textColor="primary" textFont="primary">
+            <Heading size={4} caps textColor="white" textFont="primary">
               Which one do I use???
             </Heading>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+
+          <Slide transition={["slide"]} bgColor="white" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={4} caps textColor="primary" textFont="primary">
                 There are a few schools of thought, but they basically boil down to:
             </Heading>
-            <List>
-              <ListItem>Use <Code textColor="white">var</Code> sometimes, but mostly <Code textColor="white">const</Code> and<Code textColor="white">let</Code></ListItem>
-              <ListItem>Never use <Code textColor="white">var</Code>, only <Code textColor="white">const</Code> and<Code textColor="white">let</Code></ListItem>
+            <List textColor="black">
+              <ListItem>Use <Code style={codeStyle}>var</Code> sometimes, but mostly <Code style={codeStyle}>const</Code> and <Code style={codeStyle}>let</Code></ListItem>
+              <ListItem>Never use <Code style={codeStyle}>var</Code>, only <Code style={codeStyle}>const</Code> and <Code style={codeStyle}>let</Code></ListItem>
             </List>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+
+          <Slide transition={["slide"]} bgColor="white" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={4} caps textColor="primary" textFont="primary">
                 Personally?
             </Heading>
-            <Text textColor="secondary">
-                Only use <Code textColor="white">let</Code> and <Code textColor="white">const</Code>, reasons being:
+            <Text textColor="black">
+                Only use <Code style={codeStyle}>let</Code> and <Code style={codeStyle}>const</Code>, reasons being:
             </Text>
-            <List>
-              <ListItem><Code textColor="white">var</Code> variables are hard to contain -- can leak out of their scope</ListItem>
+            <List textColor="black">
+              <ListItem><Code style={codeStyle}>var</Code> variables are hard to contain -- can leak out of their scope</ListItem>
               <ListItem>Can also be overwritten even if they have already been declared</ListItem>
               <ListItem>You can be a time wizard and access them before they are even assigned a value. Whoa! Too much power!</ListItem>
-              <ListItem><Code textColor="white">let</Code> is only accesible to current scope, and cannot be re-declared</ListItem>
-              <ListItem><Code textColor="white">const</Code> allows us to control the mutability of our data, and gives developers a clearer picture of data restrictions</ListItem>
+              <ListItem><Code style={codeStyle}>let</Code> is only accesible to current scope, and cannot be re-declared</ListItem>
+              <ListItem><Code style={codeStyle}>const</Code> allows us to control the mutability of our data, and gives developers a clearer picture of data restrictions</ListItem>
             </List>
           </Slide>
+
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <Heading size={4} caps textColor="white">
               Examples
@@ -116,38 +137,41 @@ export default class Presentation extends React.Component {
             />
             <Text>Bonus tip: Unsure? Use <Code textColor="white">const</Code></Text>
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               Functions
             </Heading>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+
+          <Slide transition={["slide"]} bgColor="white" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={4} caps textColor="primary" textFont="primary">
                 Improvements
             </Heading>
-            <Text textColor="secondary">
-                Arrow Functions <Code textColor="white">=></Code>
+            <Text textColor="black">
+                Arrow Functions <Code style={codeStyle}>=></Code>
             </Text>
-            <text>Arrow functions are more concise, and allow us to implicitly return values, reducing lines of code. They also inherit <Code textColor="white">this</Code> from the parent scope.</text>
+            <Text>Arrow functions are more concise, and allow us to implicitly return values, reducing lines of code. They also inherit <Code style={codeStyle}>this</Code> from the parent scope.</Text>
             <CodePane
               lang="js"
               source={require("raw!../assets/deck.example2")}
               margin="20px auto"
             />
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Heading size={3} caps textColor="primary" textFont="primary">
+
+          <Slide transition={["slide"]} bgColor="primary" notes="You can even put notes on your slide. How awesome is that?">
+            <Heading size={3} caps textColor="white" textFont="primary">
                 But when should I use an arrow function, over a named function?
             </Heading>
-            <Text textColor="white" >Basically, when you need/are using an anonymous function -- because that's what they are.</Text>
-            <Text textColor="white">So really -- callback functions!</Text>
+            <Text textColor="black">Basically, when you need/are using an anonymous function -- because that's what they are. So really -- callback functions!</Text>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+
+          <Slide transition={["slide"]} bgColor="white" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={4} caps textColor="primary" textFont="primary">
                 Improvements pt. deux
             </Heading>
-            <Text textColor="secondary">
-                Default <Code textColor="white">arguments</Code>
+            <Text textColor="black">
+                Default <Code style={codeStyle}>arguments</Code>
             </Text>
             <Text>Allow us to pass in default values to our functions</Text>
             <CodePane
@@ -156,11 +180,13 @@ export default class Presentation extends React.Component {
               margin="20px auto"
             />
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               Template Strings
             </Heading>
           </Slide>
+
           <Slide transition={["slide"]} bgColor="white" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={4} caps textColor="primary" textFont="primary">
                 String construction made easy
@@ -189,17 +215,19 @@ const info \`My name is \${name} and I'm \${age} years old.\`
 ~~~            `}
             </Markdown>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="white">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Many uses
             </Heading>
-            <Text>Not only can we make string concatenation much easier on ourselves, but we can also process strings by "tagging" them.</Text>
+            <Text textColor="black">Not only can we make string concatenation much easier on ourselves, but we can also process strings by "tagging" them.</Text>
             <CodePane
               lang="js"
               source={require("raw!../assets/deck.example4")}
               margin="20px auto"
             />
           </Slide>
+
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <Heading size={4} caps textColor="secondary">
               Strings also have some new methods, because f**k regex!
@@ -218,13 +246,15 @@ const info \`My name is \${name} and I'm \${age} years old.\`
             </List>
             <Text>FYI: These are all case sensitive! So if you want to ignore case, you still have to use regex</Text>
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               Destructuring
             </Heading>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Grabbing the data we need, instead of digging for it
             </Heading>
             <Text>No more chaining properties, with destructuring we can get the data we need right away</Text>
@@ -234,8 +264,9 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               margin="20px auto"
             />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               We can destructure arrays too!
             </Heading>
             <CodePane
@@ -244,8 +275,9 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               margin="20px auto"
             />
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               Nu Loops
             </Heading>
           </Slide>
@@ -253,20 +285,22 @@ const info \`My name is \${name} and I'm \${age} years old.\`
             <Heading size={4} caps textColor="secondary">
               Current loop shortcomings
             </Heading>
-            <Text>We already have ways of iterating over data, but they have some faults:</Text>
+            <Text>We already have ways of iterating over data, but...</Text>
             <List>
               <ListItem><Code textColor="white">for</Code> -- Does the trick, but has low readability and confusing syntax</ListItem>
               <ListItem><Code textColor="white">.forEach</Code> -- Cannot use break statement inside it</ListItem>
               <ListItem><Code textColor="white">for..in</Code> -- Better, but only gives you the index and can return things that have been added to the array prototype!</ListItem>
             </List>
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               for...of to the rescue!
             </Heading>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               It literally does everything
             </Heading>
             <CodePane
@@ -275,22 +309,25 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               margin="20px auto"
             />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Objects are a bit of a special case
             </Heading>
-            <Text>Since Objects are missing key iteration methods, <Code textColor="white">for..of</Code> will not work as intended on them for now, although you can work around it.</Text>
+            <Text>Since Objects are missing key iteration methods, <Code style={codeStyle}>for..of</Code> will not work as intended on them for now, although you can work around it.</Text>
             <CodePane
               lang="js"
               source={require("raw!../assets/deck.example8")}
               margin="20px auto"
             />
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               Arrays also have some new methods
             </Heading>
           </Slide>
+
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <Heading size={4} caps textColor="secondary">
               Getting to the point
@@ -302,8 +339,9 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               <ListItem><Code textColor="white">Array.some/Array.every</Code> -- Finds out if at least one thing or all things are a specified value</ListItem>
             </List>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Here are those methods in action
             </Heading>
             <CodePane
@@ -312,19 +350,21 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               margin="20px auto"
             />
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               ...Spread and ...Rest operators
             </Heading>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Lazy array creation and value retrieval
             </Heading>
             <Text>...Spread and ...Rest both make assumptions, just in different ways.</Text>
-            <List>
+            <List textColor="black">
               <ListItem>
-                <Code textColor="white">...Spread</Code> -- Takes values, and spreads them out into an array.
+                <Code style={codeStyle}>...Spread</Code> -- Takes values, and spreads them out into an array.
                 <Markdown>
                   {`
 ~~~
@@ -334,7 +374,7 @@ const info \`My name is \${name} and I'm \${age} years old.\`
                 </Markdown>
                 </ListItem>
               <ListItem>
-                <Code textColor="white">...Rest</Code> -- Grabs the "rest" of the data
+                <Code style={codeStyle}>...Rest</Code> -- Grabs the "rest" of the data
                 <Markdown>
                   {`
 ~~~
@@ -345,13 +385,15 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               </ListItem>
             </List>
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               A big topic: Classes
             </Heading>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               A tech lunch unto itself
             </Heading>
             <Text>Suffice to say, that if you are comfortable with class declarations -- yay, you can use them now! Otherwise, keep using prototypal inheritance, since that underlying structure in JS has not (and will probably not) change.</Text>
@@ -361,13 +403,15 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               margin="20px auto"
             />
           </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} caps textColor="black" textFont="primary">
+            <Heading size={1} caps textColor="white" textFont="primary">
               Rapid Fire: More Big Topics
             </Heading>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Promises
             </Heading>
             <Text>Asynchronous, basically says "I WILL go do that thing, and when I'm done I'll let you know."</Text>
@@ -377,8 +421,9 @@ const info \`My name is \${name} and I'm \${age} years old.\`
               margin="20px auto"
             />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Symbols
             </Heading>
             <Text>A new primitive type -- are good when you need a piece of data to be unique.</Text>
@@ -402,11 +447,12 @@ const data = symbols.map(symbol => prizeLogic[symbol]);
 ~~~              `}
             </Markdown>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Generators
             </Heading>
-            <Text>Denotted by a <Code>*</Code> symbol, and also asynchronous, generator functions can be stopped and started again with the <Code>yield</Code> statement</Text>
+            <Text>Denotted by a <Code style={codeStyle}>*</Code> symbol, and also asynchronous, generator functions can be stopped and started again with the <Code style={codeStyle}>yield</Code> statement</Text>
             <Text>Particularly useful, for chaining Ajax requests:</Text>
             <CodePane
               lang="js"
@@ -414,11 +460,12 @@ const data = symbols.map(symbol => prizeLogic[symbol]);
               margin="20px auto"
             />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Proxies
             </Heading>
-            <List>
+            <List textColor="black">
               <ListItem>Allow you to overwrite the default behavior of an operation on an object.</ListItem>
               <ListItem>Takes two things, a target and a handler. The methods inside are called "traps".</ListItem>
               <ListItem>Good for handling data formatting:</ListItem>
@@ -465,32 +512,40 @@ safety.ID = 200;
 ~~~              `}
             </Markdown>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Sets
             </Heading>
             <Text>Like an Array, but you cannot add the same thing twice.</Text>
-            <List>
+            <List textColor="black">
               <ListItem>Has its own API for data management</ListItem>
               <ListItem>Cannot acces values by index</ListItem>
               <ListItem>Are actually just generators!</ListItem>
-              <ListItem>Has a few different methods that make using them pretty easy: <Code>.add()</Code>, <Code>.delete()</Code>, <Code>.clear()</Code></ListItem>
+              <ListItem>Has a few different methods that make using them pretty easy: <Code style={codeStyle}>.add()</Code>, <Code style={codeStyle}>.delete()</Code>, <Code style={codeStyle}>.clear()</Code></ListItem>
             </List>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
+              Sets
+            </Heading>
             <CodePane
               lang="js"
               source={require("raw!../assets/deck.example13")}
               margin="20px auto"
             />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               WeakSets
             </Heading>
             <Text>The same as a set, except</Text>
-            <List>
+            <List textColor="black">
               <ListItem>Can ONLY ever contain object</ListItem>
               <ListItem>Cannot loop over them</ListItem>
-              <ListItem>No <Code>.clear()</Code> because they actually clean themselves!</ListItem>
+              <ListItem>No <Code style={codeStyle}>.clear()</Code> because they actually clean themselves!</ListItem>
               <ListItem>If a reference to a value in the wekset no longer exists, it is removed from the set.</ListItem>
             </List>
             <Markdown>
@@ -503,20 +558,22 @@ const weakCatMap = new WeatSet([cat1, cat2]);
 ~~~              `}
             </Markdown>
           </Slide>
+
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <Heading size={4} caps textColor="secondary">
               Okay cool, but how should I use sets on the daily?
             </Heading>
             <Text>Sets are great when you have a collection of data, like IDs or something, that you want to track but do not want duplicates of.</Text>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               Maps
             </Heading>
             <Text>Like a set, except they have a key AND a value.</Text>
-            <List>
+            <List textColor="black">
               <ListItem>Keys and values can be anything</ListItem>
-              <ListItem>Have different methods available: <Code>.set()</Code> <Code>.get()</Code> <Code>.has()</Code></ListItem>
+              <ListItem>Have different methods available: <Code style={codeStyle}>.set()</Code> <Code style={codeStyle}>.get()</Code> <Code style={codeStyle}>.has()</Code></ListItem>
             </List>
             <CodePane
               lang="js"
@@ -524,8 +581,9 @@ const weakCatMap = new WeatSet([cat1, cat2]);
               margin="20px auto"
             />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <Heading size={4} caps textColor="secondary">
+
+          <Slide transition={["zoom", "fade"]} bgColor="white" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} caps textColor="primary">
               WeakMaps
             </Heading>
             <Text>Similar to a map, but like a WeakSet -- is not enumerable, and manages its own garbage collection. WeakMaps also do not have a size.</Text>
@@ -562,98 +620,22 @@ buttons.forEach(button => {
 ~~~              `}
             </Markdown>
           </Slide>
+
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <Heading size={1} caps textColor="secondary">
               Thanks! Questions?
             </Heading>
           </Slide>
+
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <Heading size={4} caps textColor="secondary">
               Resources:
             </Heading>
-          </Slide>
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Strings also have some new methods, because f**k regex!
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
-              </Heading>
-            </Appear>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
+              <ListItem><Link href="https://es6.io" textColor="white">ES6.io</Link>  -- Wes Bos</ListItem>
+              <ListItem><Link href="https://formidable.com/open-source/spectacle/"><Text textColor="white">https://formidable.com/open-source/spectacle/</Text></Link></ListItem>
+              <ListItem><Link href="https://github.com/getify/You-Dont-Know-JS" textColor="white">You Don't Know JS</Link></ListItem>
             </List>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
           </Slide>
         </Deck>
       </Spectacle>
